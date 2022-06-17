@@ -5,11 +5,11 @@ import CardPokemon from "./../components/CardPokemon";
 export default function App() {
 	const [dataState, setData] = useState({ results: [] });
 	useEffect(() => {
-		const fetchData = async () => {
+		const obtenerPokemons = async () => {
 			const result = await axios("https://pokeapi.co/api/v2/pokemon/");
 			setData(result.data);
 		};
-		fetchData();
+		obtenerPokemons();
 	}, []);
 
 	return (
